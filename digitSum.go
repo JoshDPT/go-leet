@@ -10,6 +10,6 @@ func digitSum(n int) int {
 		digitInt, _ := strconv.Atoi(string(digit))
 		sum = sum + digitInt
 	}
-	
+
 	return sum
 }

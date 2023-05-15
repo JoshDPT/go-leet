@@ -10,6 +10,6 @@ func digitProduct(n int) int {
 		digitInt, _ := strconv.Atoi(string(digit))
 		product = product * digitInt
 	}
-	
+
 	return product
 }

@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func validPali_test(t *testing.T) {
+func Test_validPali(t *testing.T) {
 	result1 := validPali("1234")
 	if result1 != false {
 		t.Errorf("Expected result to be false, but got %t", result1)
