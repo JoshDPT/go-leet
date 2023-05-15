@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestCalc5(t *testing.T) {
+func containsDuplicate_test(t *testing.T) {
 	result1 := containsDuplicate([]int{1, 2, 3, 4, 4})
 	if result1 != true {
 		t.Errorf("Expected result to be true, but got %t", result1)

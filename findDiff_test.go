@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestCalc(t *testing.T) {
+func findDifference_test(t *testing.T) {
 	expected := [][]int{
 		{1, 3},
 		{4, 6},

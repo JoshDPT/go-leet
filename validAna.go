@@ -3,12 +3,12 @@ package main
 func isAnagram(s string, t string) bool {
 	one := countBy(s)
 	two := countBy(t)
-	for k,_ := range one {
+	for k := range one {
 			if one[k] != two[k] {
 					return false
 			}
 	}
-	for k,_ := range two {
+	for k := range two {
 			if one[k] != two[k] {
 					return false
 			}

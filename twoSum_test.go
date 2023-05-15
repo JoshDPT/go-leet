@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestCalc4(t *testing.T) {
+func twoSum_test(t *testing.T) {
 	expected := []int{1,2}
 	result := twoSum([]int{1, 2, 3}, 5)
 	if !reflect.DeepEqual(result, expected) {
