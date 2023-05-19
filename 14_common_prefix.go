@@ -7,27 +7,17 @@ func commonPrefix (arr []string) string {
 	// iterate though each character of BASE
 	for i := 0; i < len(base); i++ {
 
-		// create a flag variable and initialize it to true
-		isCommon := true
-
 		// iterate through each word of the array
-		for j := 0; j < len(arr); j++ {
+		for _,s := range arr {
 
-			// conditional if base at i NOT equal that word at i
-			if(arr[j][i] != base[i]){
-
-				// change flag to false
-				isCommon = false
+			// if i is out of bounds or not equal to string i
+			if i == len(s) || s[i] != arr[0][i] {
+				return common
 			}
 		}
-		if isCommon == false {
-
-			// if it is false, exit loop immediately
-			break
-		}
 		
-		// increment common string by that char if flag is true
-		common += string(base[i])
+		// add char to common string
+		common += string(arr[0][i])
 	}
 	return common
 }
