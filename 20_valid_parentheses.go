@@ -5,20 +5,27 @@ func validParenthesis(s string) bool {
 	dict["}"] = "{"
 	dict["]"] = "["
 	dict[")"] = "("
-	stk := []string{}
+
+	stk := ByteStack{}
 
 	for _, c := range s {
 		ch := string(c)
+
 		switch ch {
+
 		case "{", "[", "(":
-			stk = append(stk, ch)
+			stk.Push(byte(c))
+
 		case "}", "]", ")":
-			if len(stk) == 0 || stk[len(stk)-1] != dict[ch] {
+			if stk.IsEmpty()|| string(stk.Peek()) != dict[ch] {
 				return false
+
 			} else {
-				stk = stk[:len(stk)-1]
+				stk.Pop()
+
 			}
+
 		}
 	}
-	return len(stk) == 0
+	return stk.IsEmpty()
 }
