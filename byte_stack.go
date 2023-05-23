@@ -9,13 +9,14 @@ type ByteStack struct {
 	items []byte
 }
 
-// s pointing to the ByteStack is similar to this in TS
+// s pointing to the ByteStack is similar to "this" in TS
 func (s *ByteStack) Push (value byte) {
 	s.items = append(s.items, value)
 }
 
 // we can return two variables using parentheses 
 func (s *ByteStack) Pop () (byte, error) {
+	
 	// if it is empty, return 0 and throw error
 	if s.IsEmpty() {
 		return 0, errors.New("ByteStack is empty")
