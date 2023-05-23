@@ -1,6 +1,8 @@
 package main
 
-import "errors"
+import (
+	"errors"
+)
 
 // using linked list to make an efficient queue
 type Node struct {
