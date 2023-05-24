@@ -13,6 +13,6 @@ func Test_validPar(t *testing.T) {
 	}
 	result3 := validParenthesis("()[]{}")
 	if result3 != true {
-		t.Errorf("Expected result to be false, but got %t", result3)
+		t.Errorf("Expected result to be true, but got %t", result3)
 	}
 }

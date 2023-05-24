@@ -1,30 +1,26 @@
 package main
 
 func validParenthesis(s string) bool {
-	dict := make(map[string]string)
-	dict["}"] = "{"
-	dict["]"] = "["
-	dict[")"] = "("
+	keys := []rune{'{', '(', '['}
+	values := []rune{'}', ')', ']'}
+	dict := make(map[rune]rune)
 
-	stk := ByteStack{}
+	for i := range keys {
+		dict[keys[i]] = values[i]
+	}
+
+	stk := &Stack{}
 
 	for _, c := range s {
-		ch := string(c)
-
-		switch ch {
-
-		case "{", "[", "(":
-			stk.Push(byte(c))
-
-		case "}", "]", ")":
-			if stk.IsEmpty()|| string(stk.Peek()) != dict[ch] {
+		if _,ok := dict[c]; ok {
+			stk.Push(c)
+		} else if stk.IsEmpty() {
+			return false
+		} else {
+			top, _ := stk.Pop()
+			if dict[top.(rune)] != c {
 				return false
-
-			} else {
-				stk.Pop()
-
 			}
-
 		}
 	}
 	return stk.IsEmpty()

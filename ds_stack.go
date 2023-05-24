@@ -5,21 +5,22 @@ import (
 )
 
 // defining type stack which as items which is an array of values
-type ByteStack struct {
-	items []byte
+type Stack struct {
+	items []interface{}
 }
 
-// s pointing to the ByteStack is similar to "this" in TS
-func (s *ByteStack) Push (value byte) {
+// s pointing to the Stack is similar to "this" in TS
+func (s *Stack) Push (value interface{}) {
 	s.items = append(s.items, value)
 }
 
 // we can return two variables using parentheses 
-func (s *ByteStack) Pop () (byte, error) {
+func (s *Stack) Pop () (interface{}, error) {
 	
 	// if it is empty, return 0 and throw error
 	if s.IsEmpty() {
-		return 0, errors.New("ByteStack is empty")
+		ErrStackEmpty := errors.New("Stack is empty")
+		return 0, ErrStackEmpty
 	}
 
 	// idiomatic was to pop - get last index, define value, slice the slice at that index
@@ -30,14 +31,14 @@ func (s *ByteStack) Pop () (byte, error) {
 	return value, nil
 }
 
-func (s *ByteStack) IsEmpty () bool {
+func (s *Stack) IsEmpty () bool {
 	return len(s.items) == 0
 }
 
-func (s *ByteStack) Peek () byte {
+func (s *Stack) Peek () interface{} {
 	return s.items[len(s.items)-1]
 }
 
-func (s *ByteStack) Size () int {
+func (s *Stack) Size () int {
 	return len(s.items)
 }
