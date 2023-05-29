@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_commonPrefix (t *testing.T) {
+func Test_commonPrefix(t *testing.T) {
 	arr := []string{
 		"dog",
 		"dong",

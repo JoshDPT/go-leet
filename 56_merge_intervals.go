@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func mergeIntervals (a [][]int) [][]int {
+func mergeIntervals(a [][]int) [][]int {
 	// sort the array from first index small to large
 	sort.Slice(a, func(i, j int) bool { return a[i][0] < a[j][0] })
 
@@ -18,7 +18,7 @@ func mergeIntervals (a [][]int) [][]int {
 		if ans[len(ans)-1][1] >= a[i][0] {
 			// merge the intervals
 			ans[len(ans)-1][1] = int(math.Max(float64(ans[len(ans)-1][1]), float64(a[i][1])))
-			
+
 		} else {
 			// push interval as no overlap
 			ans = append(ans, a[i])

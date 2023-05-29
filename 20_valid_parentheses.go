@@ -11,8 +11,8 @@ func validParenthesis(s string) bool {
 
 	stk := Stack{}
 
-	for _,c := range s {
-		if _,ok := dict[c]; ok {
+	for _, c := range s {
+		if _, ok := dict[c]; ok {
 			stk.Push(c)
 		} else {
 			if dict[stk.Peek().(rune)] == c {

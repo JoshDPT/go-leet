@@ -3,7 +3,7 @@ package main
 // import "sort"
 
 // func lastStone(stones []int) int {
-	
+
 // 	sort.Ints(stones)
 // 	stone := stones[0]
 // 	i := 1

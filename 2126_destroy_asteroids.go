@@ -8,7 +8,7 @@ func destroyAsteroids(planet int, asteroids []int) bool {
 
 	sort.Ints(asteroids)
 
-	for _,asteroid := range asteroids {
+	for _, asteroid := range asteroids {
 		if planet >= asteroid {
 			planet += asteroid
 		} else {

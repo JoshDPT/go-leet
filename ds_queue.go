@@ -7,8 +7,8 @@ import (
 // using linked list to make an efficient queue
 type Node struct {
 	// I personally don't love doing this, but it allows for many data types
-    Val interface{}
-    Next *Node
+	Val  interface{}
+	Next *Node
 }
 
 // defining the queue data structure
@@ -19,22 +19,22 @@ type Queue struct {
 	size int
 }
 
-func (q * Queue) Enqueue (val interface{}) {
+func (q *Queue) Enqueue(val interface{}) {
 	// ampersand is vital to maintain pointers for next
 	node := &Node{val, nil}
 	// this means it is empty, could use isEmpty()
 	if q.tail == nil {
 		q.head = node
 		q.tail = node
-		// add it to the end  
+		// add it to the end
 	} else {
 		q.tail.Next = node
 		q.tail = q.tail.Next
 	}
-	q.size+=1
+	q.size += 1
 }
 
-func (q * Queue) Dequeue () (interface{}, error) {
+func (q *Queue) Dequeue() (interface{}, error) {
 	if q.head == nil {
 		return 0, errors.New("No element to dequeue")
 	}
@@ -48,10 +48,10 @@ func (q * Queue) Dequeue () (interface{}, error) {
 	return data, nil
 }
 
-func (q * Queue) IsEmpty () bool {
+func (q *Queue) IsEmpty() bool {
 	return q.size == 0
 }
 
-func (q * Queue) Size () int {
+func (q *Queue) Size() int {
 	return q.size
 }

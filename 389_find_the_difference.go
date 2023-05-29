@@ -9,7 +9,7 @@ func findDifference(nums1 []int, nums2 []int) [][]int {
 	nums2diff := []int{}
 	map1 := makeMap(nums1)
 	map2 := makeMap(nums2)
-	
+
 	for k := range map1 {
 		if _, ok := map2[k]; !ok {
 			nums1diff = append(nums1diff, k)

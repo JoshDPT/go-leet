@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_stack (t *testing.T) {
+func Test_stack(t *testing.T) {
 	s := Stack{}
 	s.Push(1)
 	s.Push(1)
@@ -17,7 +17,7 @@ func Test_stack (t *testing.T) {
 	if result2 != 1 {
 		t.Errorf("Expected result2 to be 1, but got %v", result2)
 	}
-	result3,_ := s.Pop()
+	result3, _ := s.Pop()
 	if result3 != 1 {
 		t.Errorf("Expected result3 to be 1, but got %v", result3)
 	}

@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_longestSubstringNoRepeat (t *testing.T) {
+func Test_longestSubstringNoRepeat(t *testing.T) {
 	result := longestSubstringNoRepeat("abcabcbb")
 	if result != 3 {
 		t.Errorf("Expected result to be 3, but got %v", result)

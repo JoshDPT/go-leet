@@ -10,13 +10,13 @@ type Stack struct {
 }
 
 // s pointing to the Stack is similar to "this" in TS
-func (s *Stack) Push (value interface{}) {
+func (s *Stack) Push(value interface{}) {
 	s.items = append(s.items, value)
 }
 
-// we can return two variables using parentheses 
-func (s *Stack) Pop () (interface{}, error) {
-	
+// we can return two variables using parentheses
+func (s *Stack) Pop() (interface{}, error) {
+
 	// if it is empty, return 0 and throw error
 	if s.IsEmpty() {
 		ErrStackEmpty := errors.New("Stack is empty")
@@ -31,14 +31,14 @@ func (s *Stack) Pop () (interface{}, error) {
 	return value, nil
 }
 
-func (s *Stack) IsEmpty () bool {
+func (s *Stack) IsEmpty() bool {
 	return len(s.items) == 0
 }
 
-func (s *Stack) Peek () interface{} {
+func (s *Stack) Peek() interface{} {
 	return s.items[len(s.items)-1]
 }
 
-func (s *Stack) Size () int {
+func (s *Stack) Size() int {
 	return len(s.items)
 }

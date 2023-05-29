@@ -4,7 +4,7 @@ import (
 	"math"
 )
 
-func containerMostWater (a []int) int{
+func containerMostWater(a []int) int {
 	left, right := 0, len(a)-1
 	max := 0.0
 
@@ -17,6 +17,6 @@ func containerMostWater (a []int) int{
 			right--
 		}
 	}
-	
+
 	return int(max)
 }
