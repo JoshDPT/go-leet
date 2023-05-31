@@ -9,6 +9,7 @@ func Test_longestSubstringNoRepeat(t *testing.T) {
 	if result != 3 {
 		t.Errorf("Expected result to be 3, but got %v", result)
 	}
+	
 	result1 := longestSubstringNoRepeat("bbbbb")
 	if result1 != 1 {
 		t.Errorf("Expected result to be 1, but got %v", result1)
