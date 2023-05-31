@@ -12,7 +12,7 @@ func Test_reverseWords(t *testing.T) {
 	if result2 != "world hello" {
 		t.Errorf("Expected result to be (world hello), but got %s", result2)
 	}
-	
+
 	result3 := reverseWords("a good   example")
 	if result3 != "example good a" {
 		t.Errorf("Expected result to be example good a, but got %s", result3)
