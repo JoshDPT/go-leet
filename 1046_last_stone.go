@@ -1,17 +1,29 @@
 package main
 
-// import "sort"
+import (
+	"sort"
+)
 
-// func lastStone(stones []int) int {
+func lastStone(stones []int) int {
 
-// 	sort.Ints(stones)
-// 	stone := stones[0]
-// 	i := 1
+	for len(stones) > 1 {
+		sort.Ints(stones)
+		big := stones[len(stones)-1]
+		stones = stones[:len(stones)-1]
+		big = big - stones[len(stones)-1]
+		if big > 0 {
+			stones[len(stones)-1] = big
+		} else {
+			stones = stones[:len(stones)-1]
+		}
+	}
+	if len(stones) > 0 {
+		return stones[0]
+	} else {
+		return 0
+	}
+}
 
-// 	for i < len(stones)-1 {
-// 		if stone > stones[i] {
-// 			stone = (stone - )
-// 		}
-// 	}
-
-// }
+func main () {
+	lastStone([]int{2,7,4,1,8,1})
+}
