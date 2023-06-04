@@ -23,7 +23,3 @@ func lastStone(stones []int) int {
 		return 0
 	}
 }
-
-func main () {
-	lastStone([]int{2,7,4,1,8,1})
-}

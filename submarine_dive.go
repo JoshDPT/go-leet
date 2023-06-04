@@ -1,9 +1,10 @@
 package main
 
 import (
-	"strings"
-	"strconv"
+	"errors"
 	"log"
+	"strconv"
+	"strings"
 )
 
 type Tuple struct {
@@ -11,7 +12,7 @@ type Tuple struct {
 	y int
 }
 
-func parseLine (line string) Tuple {
+func parseLine (line string) (Tuple, error) {
 	arr := strings.Fields(line)
 	dir := arr[0]
 	amount, err := strconv.Atoi(arr[1])
@@ -25,22 +26,24 @@ func parseLine (line string) Tuple {
 			return Tuple{
 				x: amount,
 				y: 0,
-			}
+			}, nil
 		}
 		case "down": {
 			return Tuple{
 				x: 0,
 				y: amount,
-			}
+			}, nil
 		}
 		case "up": {
 			return Tuple{
 				x: 0,
 				y: -amount,
-			}
+			}, nil
+		}
+		default: {
+			return Tuple{0,0}, errors.New("This should not happen")
 		}
 	}
-	return Tuple{0,0}
 }
 
 func submarineDive (s string) int {
@@ -49,7 +52,12 @@ func submarineDive (s string) int {
 		pos := Tuple{0,0}
 
 		for _, line := range lines {
-			coord := parseLine(line)
+			coord,err := parseLine(line)
+
+			if err != nil {
+				log.Fatal("This should not happen")
+			}
+
 			pos.x += coord.x
 			pos.y += coord.y
 		}
