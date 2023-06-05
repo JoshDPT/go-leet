@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_frequencySort (t *testing.T) {
+func Test_frequencySort(t *testing.T) {
 	result1 := frequencySort("banana")
 	if result1 != "aaannb" {
 		t.Errorf("Expected result to be (aaannb), but got %s", result1)

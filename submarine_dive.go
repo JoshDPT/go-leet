@@ -12,7 +12,7 @@ type Tuple struct {
 	y int
 }
 
-func parseLine (line string) (Tuple, error) {
+func parseLine(line string) (Tuple, error) {
 	arr := strings.Fields(line)
 	dir := arr[0]
 	amount, err := strconv.Atoi(arr[1])
@@ -22,45 +22,49 @@ func parseLine (line string) (Tuple, error) {
 	}
 
 	switch dir {
-		case "forward": {
+	case "forward":
+		{
 			return Tuple{
 				x: amount,
 				y: 0,
 			}, nil
 		}
-		case "down": {
+	case "down":
+		{
 			return Tuple{
 				x: 0,
 				y: amount,
 			}, nil
 		}
-		case "up": {
+	case "up":
+		{
 			return Tuple{
 				x: 0,
 				y: -amount,
 			}, nil
 		}
-		default: {
-			return Tuple{0,0}, errors.New("This should not happen")
+	default:
+		{
+			return Tuple{0, 0}, errors.New("This should not happen")
 		}
 	}
 }
 
-func submarineDive (s string) int {
-		lines := strings.Split(s, "\n")
-		
-		pos := Tuple{0,0}
+func submarineDive(s string) int {
+	lines := strings.Split(s, "\n")
 
-		for _, line := range lines {
-			coord,err := parseLine(line)
+	pos := Tuple{0, 0}
 
-			if err != nil {
-				log.Fatal("This should not happen")
-			}
+	for _, line := range lines {
+		coord, err := parseLine(line)
 
-			pos.x += coord.x
-			pos.y += coord.y
+		if err != nil {
+			log.Fatal("This should not happen")
 		}
 
-		return pos.x * pos.y
+		pos.x += coord.x
+		pos.y += coord.y
+	}
+
+	return pos.x * pos.y
 }

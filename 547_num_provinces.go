@@ -9,7 +9,7 @@ package main
 // Return the total number of provinces.
 
 // func numberProvinces([][]int) int {
-	
+
 // }
 
 // func main () {

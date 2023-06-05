@@ -2,18 +2,18 @@ package main
 
 import "testing"
 
-func Test_intSum (t *testing.T) {
-	result := intSum([]int{1,2,3,4,5})
+func Test_intSum(t *testing.T) {
+	result := intSum([]int{1, 2, 3, 4, 5})
 	if result != 15 {
 		t.Errorf("Expected result to be true, but got %v", result)
 	}
 
-	result1 := intSum([]int{3,3,3,3})
+	result1 := intSum([]int{3, 3, 3, 3})
 	if result1 != 12 {
 		t.Errorf("Expected result1 to be false, but got %v", result1)
 	}
 
-	result2 := intSum([]int{5,50,-10,5})
+	result2 := intSum([]int{5, 50, -10, 5})
 	if result2 != 50 {
 		t.Errorf("Expected result2 to be true, but got %v", result2)
 	}

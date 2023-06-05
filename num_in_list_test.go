@@ -4,18 +4,18 @@ import (
 	"testing"
 )
 
-func Test_isNumInList (t *testing.T) {
-	result := isNumInList([]int{1,2,3,4,5}, 5)
+func Test_isNumInList(t *testing.T) {
+	result := isNumInList([]int{1, 2, 3, 4, 5}, 5)
 	if result != true {
 		t.Errorf("Expected result to be true, but got %t", result)
 	}
 
-	result1 := isNumInList([]int{3,3,3,3}, 5)
+	result1 := isNumInList([]int{3, 3, 3, 3}, 5)
 	if result1 != false {
 		t.Errorf("Expected result1 to be false, but got %t", result1)
 	}
 
-	result2 := isNumInList([]int{4,33,-10,8}, -10)
+	result2 := isNumInList([]int{4, 33, -10, 8}, -10)
 	if result2 != true {
 		t.Errorf("Expected result2 to be true, but got %t", result2)
 	}

@@ -1,10 +1,8 @@
 // Input: ransomNote = "a", magazine = "b"
 // Output: false
 
-
 // Input: ransomNote = "aa", magazine = "ab"
 // Output: false
-
 
 // Input: ransomNote = "aa", magazine = "aab"
 // Output: true
@@ -15,7 +13,7 @@ import (
 	"testing"
 )
 
-func Test_ransomNote (t *testing.T) {
+func Test_ransomNote(t *testing.T) {
 
 	result := ransomNote("a", "b")
 	if result != false {
