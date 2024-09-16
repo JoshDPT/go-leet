@@ -10,15 +10,17 @@ import (
 func numberOfSpecialChars(word string) int {
 	lowerSet := make(map[rune]bool)
 	upperSet := make(map[rune]bool)
+
 	for _, r := range word {
 		if unicode.IsLetter(r) && unicode.IsLower(r) {
 			lowerSet[unicode.ToUpper(r)] = true
 		} else if unicode.IsLetter(r) {
 			upperSet[r] = true
-
 		}
 	}
+
 	var count int
+
 	for r := range upperSet {
 		if _, ok := upperSet[r]; ok {
 			if _, ok := lowerSet[r]; ok {
@@ -27,5 +29,6 @@ func numberOfSpecialChars(word string) int {
 			}
 		}
 	}
+
 	return count
 }
